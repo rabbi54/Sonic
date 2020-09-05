@@ -23,7 +23,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthEmailException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -72,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
         //Firebase fields
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            currentUser.getIdToken(true);
+        }
+
         databaseReference = FirebaseDatabase.getInstance().getReference(FinalVariables.FIREBASE_USER_USERS_REF);
 
         //utils
@@ -87,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             // user is not authenticated!
             // create an intent to authenticate the user
             sendUserToLoginActivity();
-        } else if (!currentUser.isEmailVerified()) {
+        } else if (!currentUser.isEmailVerified() && currentUser.getProviderId().equals(EmailAuthProvider.EMAIL_PASSWORD_SIGN_IN_METHOD)) {
             sendUserToLoginActivity();
         }
 

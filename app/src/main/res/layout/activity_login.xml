@@ -47,7 +47,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/icon_email"
-                    android:hint="Hello@gmail.com"
+                    android:hint="Email"
                     android:inputType="textEmailAddress" />
 
                 <EditText
@@ -55,7 +55,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/icon_password"
-                    android:hint="pass***"
+                    android:hint="Password"
                     android:inputType="textPassword" />
 
                 <TextView

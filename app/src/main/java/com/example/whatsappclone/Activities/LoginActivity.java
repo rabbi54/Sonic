@@ -131,7 +131,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                     // If new user direct to settings activity
                                     // If old user direct to main activity
-                                    checkingIfNewUser(mAuth.getCurrentUser(), FirebaseDatabase.getInstance().getReference(
+                                    sendingUserToActivity(mAuth.getCurrentUser(), FirebaseDatabase.getInstance().getReference(
                                             FinalVariables.FIREBASE_USER_USERS_REF
                                     ));
                                 }
@@ -153,7 +153,7 @@ public class LoginActivity extends AppCompatActivity {
     // Check that
     // If new user then, user must provide his username and status so redirect him to settings activity
     // If not new user the redirect to main activity.
-    private void checkingIfNewUser(FirebaseUser currentUser,
+    private void sendingUserToActivity(FirebaseUser currentUser,
             DatabaseReference databaseReference) {
         String currentUserID = currentUser.getUid();
         databaseReference.child(currentUserID).addValueEventListener(new ValueEventListener() {
