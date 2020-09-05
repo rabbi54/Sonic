@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.PhoneLoginActivity">
+
+    <ImageView
+        android:id="@+id/register_image"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/login_background_gradient"
+        android:src="@drawable/login_background" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_image"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/log_in_holder"
+        android:elevation="5dp"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+    <EditText
+        android:id="@+id/phone_number_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginEnd="17dp"
+        android:hint="@string/phone_number"
+        android:textAllCaps="false"
+        android:drawableEnd="@drawable/icon_phone"
+        android:autofillHints="@string/phone_number"
+        android:inputType="phone"/>
+
+
+    <EditText
+        android:id="@+id/phone_number_verification_code_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="17dp"
+        android:visibility="invisible"
+        android:hint="@string/verification_code"
+        android:textAllCaps="false"
+        android:drawableEnd="@drawable/icon_password"
+        android:autofillHints="@string/phone_number"
+        android:inputType="phone"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/send_verification_code_btn"
+        android:textAllCaps="false"
+        android:text="@string/send_verification_code"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="17dp"
+        android:background="@drawable/buttons"
+        android:textColor="@android:color/background_light"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/verify_code_btn"
+        android:textAllCaps="false"
+        android:text="@string/verify_code"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="17dp"
+        android:background="@drawable/buttons"
+        android:textColor="@android:color/background_light"
+        android:visibility="invisible"
+        />
+    </LinearLayout>
+
+</RelativeLayout>
