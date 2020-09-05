@@ -20,4 +20,5 @@
     <string name="verification_code">Verification Code</string>
     <string name="send_verification_code">Send Verification Code</string>
     <string name="verify_code">Verify Code</string>
+    <string name="resend_code">Resend Code</string>
 </resources>

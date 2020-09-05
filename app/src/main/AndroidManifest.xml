@@ -11,15 +11,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.PhoneLoginActivity"></activity>
-        <activity android:name=".Activities.GroupChatActivity" />
-        <activity android:name=".Activities.SettingsActivity" />
+        <activity android:name=".Activities.PhoneLoginActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"></activity>
+        <activity android:name=".Activities.GroupChatActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name=".Activities.SettingsActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
         <activity
             android:name=".Activities.RegisterActivity"
-            android:theme="@style/LogInTheme" />
+            android:theme="@style/LogInTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
         <activity
             android:name=".Activities.LoginActivity"
-            android:theme="@style/LogInTheme" />
+            android:theme="@style/LogInTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
         <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

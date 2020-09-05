@@ -39,4 +39,7 @@ dependencies {
 
     // Circle image
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //Coutry code picked
+    implementation 'com.hbb20:ccp:2.4.0'
 }

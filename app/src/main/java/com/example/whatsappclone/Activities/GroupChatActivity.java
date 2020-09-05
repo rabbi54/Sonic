@@ -92,9 +92,13 @@ public class GroupChatActivity extends AppCompatActivity {
 
             }
         });
+
     }
 
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 
     private void initializeFields() {
         groupChatScrollView = findViewById(R.id.group_chat_scroll_view);
@@ -130,8 +134,8 @@ public class GroupChatActivity extends AppCompatActivity {
 
             displayTextMessages.append(chatName + ":\n" + chatMessage +"\n"
                     + chatTime + "\t\t" + chatDate + "\n\n\n");
-            groupChatScrollView.fullScroll(ScrollView.FOCUS_DOWN);
         }
+
     }
 
 
@@ -158,7 +162,12 @@ public class GroupChatActivity extends AppCompatActivity {
                 messageInfo.put(FinalVariables.MESSAGE_TIME, currentTime);
 
             groupMessageKeyRef.updateChildren(messageInfo);
-            groupChatScrollView.fullScroll(ScrollView.FOCUS_DOWN);
+            groupChatScrollView.post(new Runnable() {
+                @Override
+                public void run() {
+                    groupChatScrollView.fullScroll(ScrollView.FOCUS_DOWN);
+                }
+            });
 
         }
     }
